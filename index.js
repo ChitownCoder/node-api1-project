@@ -48,16 +48,17 @@ server.get('/api/users/:id', (req, res) => {
 });
 
 //?THIS IS WHERE I WILL BE ADDING POST REQUEST
+
 server.post('/api/users', (req, res) => {
-	const usersInfo = req.body;
+	const userInfo = req.body
+	userInfo.id = shortid.generate()
 
-	// use shortid to create a unique id to save with the hub info
-	usersInfo.id = shortid.generate();
-	// add the hubInfo object to the array
-	users.push(usersInfo);
+	users.push(userInfo)
 
-	res.status(201).json(usersInfo);
-});
+	!userInfo.name || !userInfo.bio
+		? res.status(500).json({ error: 'The users information could not be retrieved.' })
+		: res.status(201).json(userInfo)
+})
 
 server.delete('/api/users/:id', (req, res) => {
 	const { id } = req.params;
