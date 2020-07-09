@@ -59,6 +59,18 @@ server.post('/api/users', (req, res) => {
 	res.status(201).json(usersInfo);
 });
 
+server.delete('/api/users/:id', (req, res) => {
+	const { id } = req.params;
+
+	const found = users.find((users) => users.id === id);
+
+	if (found) {
+		users = users.filter((users) => users.id !== id);
+		res.status(200).json(found);
+	} else {
+		res.status(404).json({ message: 'user not found' });
+	}
+});
 
 const PORT = 5000;
 
