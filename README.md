@@ -31,6 +31,8 @@ Add the code necessary to create a Web API and implement the following _endpoint
 | DELETE | /api/users/:id | Removes the user with the specified `id` and returns the deleted user.                                 |
 | PUT    | /api/users/:id | Updates the user with the specified `id` using data from the `request body`. Returns the modified user |
 
+MVP MET!
+
 #### User Schema
 
 Each User _resource_ should conform to the following structure (AKA schema):
