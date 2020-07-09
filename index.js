@@ -23,6 +23,8 @@ let users = [
   },
 ];
 
+server.use(express.json());
+
 //? THIS IS WHERE I WILL BE ADDING MY GET REQUEST
 server.get('/', (req, res) => {
   res.json({message: 'Hello World!'});
@@ -45,9 +47,17 @@ server.get('/api/users/:id', (req, res) => {
 
 });
 
+//?THIS IS WHERE I WILL BE ADDING POST REQUEST
+server.post('/api/users', (req, res) => {
+	const usersInfo = req.body;
 
+	// use shortid to create a unique id to save with the hub info
+	usersInfo.id = shortid.generate();
+	// add the hubInfo object to the array
+	users.push(usersInfo);
 
-
+	res.status(201).json(usersInfo);
+});
 
 
 const PORT = 5000;
