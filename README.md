@@ -8,8 +8,8 @@
 
 ### Grab Starter Code
 
-- **Fork** and **Clone** this repository.
-- **CD into the folder** where you cloned the repository.
+"X" **Fork** and **Clone** this repository.
+"X" **CD into the folder** where you cloned the repository.
 
 ## Assignment
 
@@ -30,6 +30,8 @@ Add the code necessary to create a Web API and implement the following _endpoint
 | GET    | /api/users/:id | Returns the user object with the specified `id`.                                                       |
 | DELETE | /api/users/:id | Removes the user with the specified `id` and returns the deleted user.                                 |
 | PUT    | /api/users/:id | Updates the user with the specified `id` using data from the `request body`. Returns the modified user |
+
+MVP MET!
 
 #### User Schema
 
